@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
-    "dev":"nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "memory-cache": "^0.2.0",
     "mongoose": "^5.9.7",
+    "mongoose-autopopulate": "^0.12.1",
     "swagger-ui-express": "^4.1.4"
   },
   "devDependencies": {
