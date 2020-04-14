@@ -6,6 +6,21 @@ class BaseService {
         if(!id){
             const error= new Error();
             error.status = 400;
+            error.message = "Id must be send";
+            throw error;
+        }
+        const currentEntity = await this.repository.get(id);
+        if(!currentEntity){
+            const error= new Error();
+            error.status = 404;
+            error.message = "Entity not found";
+            throw error;
+
+        }
+        return currentEntity
+        if(!id){
+            const error= new Error();
+            error.status = 400;
             error.message = " Id must be send";
             throw error;
         }
@@ -21,8 +36,8 @@ class BaseService {
         return currentIdentity;
 
     }
-    async getAll(){
-        return await this.repository.getAll();
+    async getAll(pageSize, pageNum){
+        return await this.repository.getAll(pageSize, pageNum);
     }
     async create(entity){
         return await  this.repository.create(entity);
